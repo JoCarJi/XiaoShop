@@ -1,11 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
+import { SearchBar } from './Components/SearchBar';
 
 export const XiaoShop = () => {
 
     const [brands, setBrands] = useState(['Mac', 'HPP','Clinique']);
 
-    const onAddBrand = () =>{
+    const onSearchBrand = () =>{
         setBrands([...brands,'Unique']);
     }
 
@@ -13,7 +14,7 @@ export const XiaoShop = () => {
     <>
         <h1>XiaoShop</h1>
 
-        <button onClick={onAddBrand}>Agregar</button>
+        <SearchBar setBrands={setBrands}/>
 
         <ol>
             {brands.map( brand => {
